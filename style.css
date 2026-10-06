@@ -1,0 +1,75 @@
+    /*Variables CSS*/
+
+    :root {
+        --fondo: #0c0d11;
+        --superficie: #13151b;
+        --lineas-bordes: #232733;
+        --texto: #eceef3;
+        --texto-suave: #9097a8;
+        --naranja: #e8734a;
+        --azul: #5aa2f5;
+        --verde: #6cc48a;
+        --ocre: #e6b865; 
+        --fuente-titulos: 'Space Grotesk', sans-serif;
+        --fuente-texto: 'Inter', sans-serif;
+        --fuente-monospace: 'Fira Code', monospace;
+    }
+
+    /*Reset CSS*/
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /*Estilos generales*/
+    body {
+        background-color: var(--fondo); /* Color de fondo */
+        color: var(--texto); /* Color del texto */
+        font-family: var(--fuente-texto); /* Fuente para el texto */
+        line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+    }
+
+    /*Suavizar menú*/
+    html {
+        scroll-behavior: smooth; /* Suavizar el desplazamiento al hacer clic en los enlaces del menú */
+    }
+
+    header{ /* Estilos para el encabezado */
+        display: flex;
+        justify-content: space-between; /* Alinear elementos a los extremos */
+        align-items: center; /* Centrar verticalmente los elementos */
+        padding: 1rem 2rem; /* Espaciado interno */
+        position: sticky; /* Hacer que el encabezado sea fija al desplazarse */
+        top: 0; /* Posición desde la parte superior */
+        width: 100%; /* Ancho completo */
+        z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+        background-color: color-mix(in srgb, var(--superficie) 70%, transparent); /* Fondo semitransparente */
+        backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    }
+
+    h1, h2, h3 { /* Estilos para secciones */
+        font-family: var(--fuente-titulos); /* Fuente para títulos */
+        font-weight: 700; /* Negrita */
+    }
+    
+
+    .navLinks {
+        list-style: none; /* Eliminar viñetas de la lista */
+        display: flex; /* Mostrar los elementos de la lista en línea */
+        gap: 0.7rem; /* Espacio entre los elementos de la lista */
+        font-size: 0.8rem; /* Tamaño de fuente */
+        
+    }
+
+    a {
+        text-decoration: none; /* Eliminar subrayado de los enlaces */
+        color: var(--texto); /* Color del texto */
+        font-family: var(--fuente-monospace); /* Fuente monoespaciada */
+    }
+
+    a:hover {
+        color: var(--naranja); /* Color al pasar el ratón */
+    }
+    
+  
