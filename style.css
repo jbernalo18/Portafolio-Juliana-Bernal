@@ -76,5 +76,10 @@
       min-height: 100vh; /* Asegura que cada sección ocupe al menos la altura completa de la ventana */
       scroll-margin-top: 4rem; /* Ajusta este valor según la altura de tu encabezado (875*57)*/
     }
+
+    .botones {
+        display: flex; /* Mostrar los botones en línea */
+        gap: 2rem; /* Espacio entre los botones */
+        margin-top: 1.5rem; /* Espacio superior */
+    }
   
-    
