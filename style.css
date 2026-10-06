@@ -84,4 +84,13 @@
 
     section#inicio {
        min-height: calc(100vh - 57px); /* Altura mínima de la sección*/
+       display: flex; /* Mostrar los elementos en línea */
+       align-items: center; /* Centrar verticalmente los elementos */
+       justify-content: space-between; /* Centrar horizontalmente los elementos */
+       padding: 2rem; /* Espaciado interno */
     }
+
+    .inicio-imagen img {
+    width: 25rem;
+}
+    
