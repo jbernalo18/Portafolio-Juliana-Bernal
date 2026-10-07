@@ -300,3 +300,23 @@ h1 {
     color: var(--naranja);
     margin-bottom: 1rem;
 }
+
+.tarjeta-proyecto img {
+    display: block;
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-enlaces {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+.tarjeta-enlaces a {
+    color: var(--azul);
+}
