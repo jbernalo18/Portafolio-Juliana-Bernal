@@ -133,7 +133,7 @@ section {
 }
 
 .boton-secundario {
-    border: 1px solid var(--lineas-bordes);
+    border: 1px solid var(--lineas-bordes); 
 }
 
 .boton-secundario:hover {
@@ -153,10 +153,12 @@ section {
 }
 
 .inicio-imagen img {
-    display: block;
-    width: min(25rem, 100%);
+    display: block; 
+    width: min(25rem, 100%); 
     height: auto;
+    margin-inline: auto;
 }
+
 
 #sobremi {
     padding: 4rem 2rem;
@@ -179,6 +181,12 @@ section {
 
 .sobre-mi-informacion {
     flex: 1;
+}
+
+.sobre-mi-informacion p {
+    color: var(--texto-suave);
+    max-width: 60ch; /*lineas de 60 letras para comodidad de lectura*/
+    margin-bottom: 1rem; /*espaciado entre parrafos*/
 }
 
 .sobre-mi-img img {
@@ -241,5 +249,45 @@ h1 {
 .enlaces-sociales a:nth-child(3) { color: var(--ocre); } /*elegimos el hijo 2 y cambiamos el color a ocre*/
 
 .enlaces-sociales a:hover {
-    opacity: 0.7;
+    opacity: 0.7;  
+}
+
+.grid-tarjetas {
+    display: grid; /*creamos cuadricula*/
+    grid-template-columns: repeat(3, 1fr); /*tres columnas iguales*/
+    gap: 1.5rem; 
+}
+
+.tarjeta {
+    background-color: var(--superficie);
+    border: 1px solid var(--lineas-bordes);
+    padding: 1.25rem;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.tarjeta:hover {
+    border-color: var(--naranja);
+    transform: translateX(-4px); /*mueve la tarjeta hacia arriba cuando pasa el mouse*/
+}
+
+.tarjeta p {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.etiquetas {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.etiquetas li {
+    font-family: var(--fuente-monospace);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.7rem;
+    border: 1px solid var(--lineas-bordes);
+    border-radius: 99px;
+    color: var(--texto-suave);
 }
