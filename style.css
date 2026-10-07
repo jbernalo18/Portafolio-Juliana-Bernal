@@ -73,7 +73,8 @@
     }
     
     section {
-      scroll-margin-top: 4rem; /* Ajusta este valor según la altura de tu encabezado (875*57)*/
+        padding: 4rem 2rem; /*espaciado de todas las secciones*/
+        scroll-margin-top: 4rem; /* Ajusta este valor según la altura de tu encabezado (875*57)*/
     }
 
     .botones {
@@ -82,7 +83,7 @@
         margin-top: 1.5rem; /* Espacio superior */
     }
 
-    section#inicio {
+     #inicio {
        min-height: calc(100vh - 57px); /* Altura mínima de la sección*/
        display: flex; /* Mostrar los elementos en línea */
        align-items: center; /* Centrar verticalmente los elementos */
@@ -91,6 +92,41 @@
     }
 
     .inicio-imagen img {
-    width: 25rem;
-}
-    
+        display: block;
+        width: min(25rem, 100%);
+        height: auto;
+     }
+
+     #sobremi {
+       padding: 4rem 2rem; /* Espaciado interno */
+    }
+    .sobremi-contenido {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+
+    }
+
+  .sobre-mi-img {
+        flex: 0 0  20rem; /*Columna de la foto ancho de partida de 20 rem*/
+
+    }
+
+
+    .sobre-mi-informacion {
+        flex: 1;
+    }
+
+    .sobre-mi-img img {
+        display:block; /*se elimina el hueco de la base*/
+        width: 100%; /*hace que la imagen ocupe el ancho de la caja*/
+        aspect-ratio: 1 / 1; /*hace que el alto sea igual que el ancho*/
+        object-fit: cover; /*llenar el cuadrado sin estirar */
+        border-radius: 20px; /*manejo de borde redondeado acorde con primera img*/
+        border: 1px solid var(--lineas-bordes); /*borde fino*/
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem; /*separacion del titulo del contenido que sigue*/
+    }
