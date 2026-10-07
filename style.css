@@ -98,7 +98,7 @@ a:hover {
 }
 
 section {
-    padding: 4rem 2rem;
+    padding: 6rem 4rem;
     /*espaciado de todas las secciones*/
     scroll-margin-top: 4rem;
     /* Ajusta este valor según la altura de tu encabezado (875*57)*/
@@ -139,6 +139,11 @@ section {
 .boton-secundario:hover {
     border-color: var(--naranja);
 }
+
+.inicio-informacion {
+    padding-left: 6rem;
+}
+
 #inicio {
     min-height: calc(100vh - 57px);
     /* Altura mínima de la sección*/
@@ -154,9 +159,10 @@ section {
 
 .inicio-imagen img {
     display: block; 
-    width: min(25rem, 100%); 
+    width: min(40rem, 100%); 
     height: auto;
     margin-inline: auto;
+    padding-right: 8rem;
 }
 
 
@@ -175,18 +181,22 @@ section {
 .sobre-mi-img {
     flex: 0 0 20rem;
     /*Columna de la foto ancho de partida de 20 rem*/
+    margin-left: 4rem;
 
 }
 
 
 .sobre-mi-informacion {
     flex: 1;
+    margin-left: 4rem;
 }
 
 .sobre-mi-informacion p {
     color: var(--texto-suave);
-    max-width: 60ch; /*lineas de 60 letras para comodidad de lectura*/
+    max-width: 75ch; /*lineas de 60 letras para comodidad de lectura*/
     margin-bottom: 1rem; /*espaciado entre parrafos*/
+    font-family: var(--fuente-monospace);
+    text-align: justify;
 }
 
 .sobre-mi-img img {
@@ -217,15 +227,16 @@ h2 {
 }
 
 h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem); /*clamp: el titulo crece con el ancho de la pantalla, con limites (min y max)*/
+    font-size: clamp(3.5rem, 6.5vw, 5rem); /*clamp: el titulo crece con el ancho de la pantalla, con limites (min y max)*/
     letter-spacing: -1.8px; /*Junta un poco el texto*/
     line-height: 1.1; /*alto de espacios, hacer lineas más pegadas*/
-    margin: 0.5rem 0 1rem;
+    margin: 2rem 1 2.5rem;
 }
 
 .frase {
     color: var(--texto-suave);
     max-width: 45ch; /*ancho de caracteres para limitar el numero de letras por linea*/
+    font-family: var(--fuente-monospace);
 }
 
 .cursor {
@@ -353,3 +364,54 @@ h1 {
     color: var(--texto-suave);
 }
 
+.contacto-contenido {
+    display: flex;
+    gap: 3rem;
+}
+
+.contacto-info,
+.formulario {
+    flex: 1;
+}
+
+.formulario label {
+    display: block;
+    font-family: var(--fuente-monospace);
+    font-size: 0.8rem;
+    color: var(--texto-suave);
+    margin-bottom: 0.3rem;
+}
+
+.formulario input, .formulario textarea {
+    width: 100%;
+    background-color: var(--superficie);
+    border: 1px solid var(--lineas-bordes);
+    border-radius: 6px;
+    padding: 0.7rem;
+    color: var(--texto);
+    font-family: var(--fuente-monospace);
+    margin-bottom: 1rem;
+}
+
+.formulario textarea {
+    resize: vertical;
+}
+
+.formulario input:focus, .formulario textarea:focus {
+    outline: none;
+    border-color: var(--naranja);
+}
+
+.boton {
+    font-family: var(--fuente-monospace);
+    cursor: pointer;
+}
+
+
+
+body {
+    background-image:
+        linear-gradient(var(--lineas-bordes) 1px, transparent 1px),
+        linear-gradient(90deg, var(--lineas-bordes) 1px, transparent 1px);
+    background-size: 56px 56px;
+}

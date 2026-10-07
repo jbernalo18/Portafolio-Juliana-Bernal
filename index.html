@@ -56,12 +56,12 @@
    <section id="sobremi">
      <h2>//Sobre mí</h2>  
      <div class="sobremi-contenido">
-    <div class="sobre-mi-img">    
+     <div class="sobre-mi-img">    
      <img src="./Files/Images/Foto_Juliana.png" alt="Retrato Juliana Bernal" class="sobre-mi-imagen">
         </div>      
 
     <div class="sobre-mi-informacion">    
-        <p> Soy Desarrolladora Backend Java, con formación en Electromecánica y enfoque en desarrollo de aplicaciones backend, diseño de APIs REST y gestión de bases de datos SQL utilizando Java y Spring Boot. Complemento estas competencias con experiencia en Git, GitHub, administración de servidores, redes, VLANs, protocolos de comunicación y metodologías ágiles SCRUM, lo que me permite analizar requerimientos y resolver problemas técnicos de manera estructurada. Además de mi formación en desarrollo, tengo experiencia previa trabajando con infraestructura y sistemas, por lo que tengo una visión bastante cercana a cómo el software interactúa con servicios, redes y servidores. En proyectos tecnológicos, contribuí a mantener una continuidad de transmisión del 99%, aplicando criterios de disponibilidad y estabilidad de servicios. Me motiva participar en equipos de desarrollo donde pueda construir soluciones escalables, mantenibles y eficientes, mientras continúo fortaleciendo mis competencias en el ecosistema Java. </p>
+        <p>Desarrolladora Backend Java, con formación en Electromecánica y enfoque en desarrollo de aplicaciones backend, diseño de APIs REST y gestión de bases de datos SQL utilizando Java y Spring Boot. Complemento estas competencias con experiencia en Git, GitHub, administración de servidores, redes, VLANs, protocolos de comunicación y metodologia SCRUM, lo que me permite analizar requerimientos y resolver problemas técnicos de manera estructurada. Tengo experiencia previa trabajando con infraestructura y sistemas, por lo que tengo una visión bastante cercana a cómo el software interactúa con servicios, redes y servidores. En proyectos tecnológicos, contribuí a mantener una continuidad de transmisión del 99%, aplicando criterios de disponibilidad y estabilidad de servicios. Me motiva participar en equipos de desarrollo donde pueda construir soluciones escalables, mantenibles y eficientes, mientras continúo fortaleciendo mis competencias en el ecosistema Java. </p>
     </div>
     </div>
    </section>
@@ -98,8 +98,6 @@
    <!--seccion de proyectos-->
     <section id="proyectos">
      <h2>//Proyectos</h2>
-    </section>
-
         <div class="grid-tarjetas">
             <article class="tarjeta tarjeta-proyecto">
                 <img src="./Files/Images/image_temporal.jpeg" alt="Descripcioin imagen">
@@ -143,7 +141,7 @@
                 </div>
             </article>
         </div>
-
+    </section>
 
     <section id="trayectoria">
      <h2>//Trayectoria</h2> 
@@ -193,7 +191,26 @@
     </section> ----->
 
     <section id="contacto">
-     <h2>//Contacto</h2>    
+     <h2>//Contacto</h2>   
+     
+     <div class="contacto-contenido">
+    <div class="contacto-info">
+        <p>[Frase invitando a escribirte]</p>
+        <!-- aquí puedes repetir el grupo .enlaces-sociales -->
+    </div>
+        <form class="formulario">
+            <label for="nombre">nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="correo">correo</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="mensaje">mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+            <button type="submit" class="boton boton-principal">enviar()</button>
+        </form>
+  </div>
     </section>
     </main>
 </body>
