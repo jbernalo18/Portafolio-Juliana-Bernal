@@ -291,3 +291,12 @@ h1 {
     border-radius: 99px;
     color: var(--texto-suave);
 }
+
+#habilidades h3 {
+    font-family: var(--fuente-monospace);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--naranja);
+    margin-bottom: 1rem;
+}
