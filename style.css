@@ -320,3 +320,36 @@ h1 {
 .tarjeta-enlaces a {
     color: var(--azul);
 }
+
+.linea-tiempo {
+    list-style: none;
+    border-left: 2px solid var(--lineas-bordes);
+    padding-left: 1.5rem;
+}
+
+.linea-tiempo li{
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.linea-tiempo li::before {
+    content: "";
+    position: absolute;
+    left: -1.9rem;
+    top: 0.5rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--naranja);
+}
+
+.anio {
+    font-family: var(--fuente-monospace);
+    font-size: 0.75rem;
+    color: var(--azul);
+}
+
+.linea-tiempo p {
+    color: var(--texto-suave);
+}
+
