@@ -102,6 +102,7 @@ section {
     /*espaciado de todas las secciones*/
     scroll-margin-top: 4rem;
     /* Ajusta este valor según la altura de tu encabezado (875*57)*/
+    font-family: var(--fuente-titulos);
 }
 
 .botones {
@@ -167,7 +168,7 @@ section {
 
 
 #sobremi {
-    padding: 4rem 2rem;
+    /*padding: 4rem 2rem;*/
     /* Espaciado interno */
 }
 
@@ -181,21 +182,22 @@ section {
 .sobre-mi-img {
     flex: 0 0 20rem;
     /*Columna de la foto ancho de partida de 20 rem*/
-    margin-left: 4rem;
+    /*margin-left: 4rem;*/
 
 }
 
 
 .sobre-mi-informacion {
     flex: 1;
-    margin-left: 4rem;
+    margin-left: 6.7rem;
+
 }
 
 .sobre-mi-informacion p {
-    color: var(--texto-suave);
-    max-width: 75ch; /*lineas de 60 letras para comodidad de lectura*/
-    margin-bottom: 1rem; /*espaciado entre parrafos*/
-    font-family: var(--fuente-monospace);
+    color: var(--texto);
+    max-width: 65ch; /*lineas de 60 letras para comodidad de lectura*/
+    margin-bottom: 4rem; /*espaciado entre parrafos*/
+    font-family: var(--fuente-titulos);
     text-align: justify;
 }
 
@@ -215,7 +217,9 @@ section {
 }
 
 h2 {
-    font-size: 2rem;
+    font-family: var(--fuente-monospace);
+    font-weight: 500;
+    font-size: 1.8rem;
     margin-bottom: 2rem;
     /*separacion del titulo del contenido que sigue*/
 }
@@ -247,6 +251,7 @@ h1 {
 @keyframes parpadeo { /*se define la animacion*/
     50% { opacity: 0;}  /*a mitad del ciclo elemento se vuelve invisible*/
 }
+
 
 .enlaces-sociales {
     display: flex;
