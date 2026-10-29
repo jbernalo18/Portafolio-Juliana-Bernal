@@ -1,10 +1,9 @@
-    /*Variables CSS*/
 :root {
     --fondo: #0c0d11;
     --superficie: #13151b;
     --lineas-bordes: #232733;
     --texto: #eceef3;
-    --texto-suave: #9097a8;
+    --texto-suave: #b4bac9;
     --naranja: #e8734a;
     --azul: #5aa2f5;
     --verde: #6cc48a;
@@ -12,6 +11,9 @@
     --fuente-titulos: 'Space Grotesk', sans-serif;
     --fuente-texto: 'Inter', sans-serif;
     --fuente-monospace: 'Fira Code', monospace;
+    --alto-header: 57px;
+    --ancho-contenido: 90rem;
+    /*ancho maximo del contenido en pantallas muy grandes, en pantallas normales no se nota*/
 }
 
 /*Reset CSS*/
@@ -21,7 +23,13 @@
     box-sizing: border-box;
 }
 
-/*Estilos generales*/
+/*Suavizar menú*/
+html {
+    scroll-behavior: smooth;
+    /* Suavizar el desplazamiento al hacer clic en los enlaces del menú */
+
+}
+
 body {
     background-color: var(--fondo);
     /* Color de fondo */
@@ -31,16 +39,60 @@ body {
     /* Fuente para el texto */
     line-height: 1.6;
     /* Altura de línea para mejorar la legibilidad */
+    background-image:
+        linear-gradient(var(--lineas-bordes) 1px, transparent 1px),
+        linear-gradient(90deg, var(--lineas-bordes) 1px, transparent 1px);
+    background-size: 56px 56px;
+    /*cuadricula de fondo*/
+
 }
 
-/*Suavizar menú*/
-html {
-    scroll-behavior: smooth;
-    /* Suavizar el desplazamiento al hacer clic en los enlaces del menú */
+/*Tipografía de títulos*/
+h1,
+h2,
+h3 {
+    font-family: var(--fuente-titulos);
+    /* Fuente para títulos */
+    font-weight: 700;
+    /* Negrita */
 }
+
+h1 {
+    font-size: clamp(3.5rem, 6.5vw, 5rem);
+    /*clamp: el titulo crece con el ancho de la pantalla, con limites (min y max)*/
+    letter-spacing: -1.8px;
+    /*Junta un poco el texto*/
+    line-height: 1.1;
+    /*alto de espacios, hacer lineas más pegadas*/
+    margin: 0;
+    /*sin margen extra, rol, titulo y frase quedan juntos*/
+}
+
+h2 {
+    font-family: var(--fuente-monospace);
+    font-weight: 500;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    /*separacion del titulo del contenido que sigue*/
+}
+
+/*Enlaces*/
+a {
+    text-decoration: none;
+    /* Eliminar subrayado de los enlaces */
+    color: var(--texto);
+    /* Color del texto */
+    font-family: var(--fuente-monospace);
+    /* Fuente monoespaciada */
+}
+
+a:hover {
+    color: var(--naranja);
+    /* Color al pasar el ratón */
+}
+
 
 header {
-    /* Estilos para el encabezado */
     display: flex;
     justify-content: space-between;
     /* Alinear elementos a los extremos */
@@ -62,15 +114,6 @@ header {
     /* Efecto de desenfoque */
 }
 
-h1, h2, h3 {
-    /* Estilos para secciones */
-    font-family: var(--fuente-titulos);
-    /* Fuente para títulos */
-    font-weight: 700;
-    /* Negrita */
-}
-
-
 .navLinks {
     list-style: none;
     /* Eliminar viñetas de la lista */
@@ -80,30 +123,38 @@ h1, h2, h3 {
     /* Espacio entre los elementos de la lista */
     font-size: 0.8rem;
     /* Tamaño de fuente */
-
+}
+.logo {
+    font-family: var(--fuente-monospace); 
+    font-weight: 500;
+    font-size: 1.3rem; 
+    color: var(--naranja); /*JB en naranja*/
 }
 
-a {
-    text-decoration: none;
-    /* Eliminar subrayado de los enlaces */
-    color: var(--texto);
-    /* Color del texto */
-    font-family: var(--fuente-monospace);
-    /* Fuente monoespaciada */
+.logo span {
+    color: var(--azul); /*.dev en azul*/
 }
 
-a:hover {
-    color: var(--naranja);
-    /* Color al pasar el ratón */
-}
+
 
 section {
     padding: 6rem 4rem;
     /*espaciado de todas las secciones*/
-    scroll-margin-top: 4rem;
-    /* Ajusta este valor según la altura de tu encabezado (875*57)*/
+    scroll-margin-top: var(--alto-header);
+    /*donde se detiene la seccion al hacer clic en el menu, igual al alto del header*/
+    min-height: calc(100vh - var(--alto-header));
+    /*cada seccion ocupa como minimo la pantalla visible, asi no se asoma la siguiente*/
     font-family: var(--fuente-titulos);
 }
+
+section:not(#inicio)>* {
+    max-width: var(--ancho-contenido);
+    /*todo lo que va directo dentro de una seccion (menos inicio) respeta el mismo ancho maximo*/
+    margin-inline: auto;
+    /*centra la caja cuando la pantalla es mas ancha que el limite*/
+}
+
+
 
 .botones {
     display: flex;
@@ -115,10 +166,13 @@ section {
 }
 
 .boton {
-    display: inline-block; /*ayuda a recibir bien el padding ya que es un enlace*/
-    padding: 0.6rem 1.3rem; 
+    display: inline-block;
+    /*ayuda a recibir bien el padding ya que es un enlace*/
+    padding: 0.6rem 1.3rem;
     border-radius: 6px;
     font-size: 0.85rem;
+    font-family: var(--fuente-monospace);
+    cursor: pointer;
     transition: border-color 0.2s, filter 0.2s;
 }
 
@@ -129,83 +183,133 @@ section {
 }
 
 .boton-principal:hover {
-    color: #14100d; /*Se mantiene el color del texto*/
-    filter: brightness(1.1); /*Aplica un poco de brillo*/
+    color: #14100d;
+    /*Se mantiene el color del texto*/
+    filter: brightness(1.1);
+    /*Aplica un poco de brillo*/
 }
 
 .boton-secundario {
-    border: 1px solid var(--lineas-bordes); 
+    border: 1px solid var(--lineas-bordes);
 }
 
 .boton-secundario:hover {
     border-color: var(--naranja);
 }
 
-.inicio-informacion {
-    padding-left: 6rem;
-}
 
 #inicio {
-    min-height: calc(100vh - 57px);
+    min-height: calc(100vh - var(--alto-header));
     /* Altura mínima de la sección*/
     display: flex;
     /* Mostrar los elementos en línea */
     align-items: center;
     /* Centrar verticalmente los elementos */
     justify-content: space-between;
-    /* Centrar horizontalmente los elementos */
+    /* Texto a la izquierda, imagen a la derecha */
     padding: 2rem;
     /* Espaciado interno */
 }
 
+.inicio-informacion {
+    padding-left: 6rem;
+}
+
+.rol {
+    font-family: var(--fuente-monospace);
+    font-size: 1rem;
+    color: var(--texto-suave);
+    margin-bottom: 0.4rem; /*aire*/
+
+}
+
+.frase {
+    color: var(--texto-suave);
+    max-width: 45ch;
+    /*ancho de caracteres para limitar el numero de letras por linea*/
+    font-family: var(--fuente-monospace);
+    margin-top: 1rem;
+}
+
+.cursor {
+    color: var(--naranja);
+    /*Aplicamos el color el cursor*/
+    animation: parpadeo 1s steps(1) infinite;
+    /*nombre duracion tipo repeticiones cada ciclo de 1 segundo*/
+}
+
+@keyframes parpadeo {
+
+    /*se define la animacion*/
+    50% {
+        opacity: 0;
+    }
+
+    /*a mitad del ciclo elemento se vuelve invisible*/
+}
+
+.enlaces-sociales {
+    display: flex;
+    gap: 1.5rem;
+    /*espaciado*/
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    /*tamaño normal, antes tenia un error de escritura y el navegador usaba este mismo valor*/
+}
+
+.enlaces-sociales a:nth-child(1) {
+    color: var(--azul);
+}
+
+/*elegimos el hijo 1 y cabiamos el color a azul*/
+.enlaces-sociales a:nth-child(2) {
+    color: var(--verde);
+}
+
+/*elegimos el hijo 2 y cambiamos el color a verde*/
+.enlaces-sociales a:nth-child(3) {
+    color: var(--ocre);
+}
+
+/*elegimos el hijo 3 y cambiamos el color a ocre*/
+
+.enlaces-sociales a:hover {
+    opacity: 0.7;
+}
+
 .inicio-imagen img {
-    display: block; 
-    width: min(40rem, 100%); 
+    display: block;
+    width: min(40rem, 100%);
     height: auto;
     margin-inline: auto;
     padding-right: 8rem;
 }
 
-
-#sobremi {
-    /*padding: 4rem 2rem;*/
-    /* Espaciado interno */
+.sobremi-frase {
+    padding-top: 20px;
 }
 
 .sobremi-contenido {
     display: flex;
     align-items: center;
-    gap: 3rem;
-
+    justify-content: flex-start;
+    /*la foto queda alineada con el titulo, la seccion ya se centra sola*/
+    gap: 6rem;
+    /*espacio entre la foto y el texto*/
+    margin-top: -10px;
+    font-size: 16px;
 }
 
 .sobre-mi-img {
     flex: 0 0 20rem;
     /*Columna de la foto ancho de partida de 20 rem*/
-    /*margin-left: 4rem;*/
-
-}
-
-
-.sobre-mi-informacion {
-    flex: 1;
-    margin-left: 6.7rem;
-
-}
-
-.sobre-mi-informacion p {
-    color: var(--texto);
-    max-width: 65ch; /*lineas de 60 letras para comodidad de lectura*/
-    margin-bottom: 4rem; /*espaciado entre parrafos*/
-    font-family: var(--fuente-titulos);
-    text-align: justify;
 }
 
 .sobre-mi-img img {
     display: block;
     /*se elimina el hueco de la base*/
-    width: 100%;
-    /*hace que la imagen ocupe el ancho de la caja*/
+    width: 80%;
+    /*la imagen ocupa todo el ancho de su columna*/
     aspect-ratio: 1 / 1;
     /*hace que el alto sea igual que el ancho*/
     object-fit: cover;
@@ -216,62 +320,27 @@ section {
     /*borde fino*/
 }
 
-h2 {
-    font-family: var(--fuente-monospace);
-    font-weight: 500;
-    font-size: 1.8rem;
+.sobre-mi-informacion {
+    flex: 1;
+    /*el texto ocupa el espacio que sobra al lado de la foto*/
+}
+
+.sobre-mi-informacion p {
+    color: var(--texto);
+    max-width: 65ch;
+    /*lineas de 60 letras para comodidad de lectura*/
     margin-bottom: 2rem;
-    /*separacion del titulo del contenido que sigue*/
-}
-
-.rol {
-    font-family: var(--fuente-monospace);
-    font-size: 0.8rem;
-    color: var(--texto-suave);
-}
-
-h1 {
-    font-size: clamp(3.5rem, 6.5vw, 5rem); /*clamp: el titulo crece con el ancho de la pantalla, con limites (min y max)*/
-    letter-spacing: -1.8px; /*Junta un poco el texto*/
-    line-height: 1.1; /*alto de espacios, hacer lineas más pegadas*/
-    margin: 2rem 1 2.5rem;
-}
-
-.frase {
-    color: var(--texto-suave);
-    max-width: 45ch; /*ancho de caracteres para limitar el numero de letras por linea*/
-    font-family: var(--fuente-monospace);
-}
-
-.cursor {
-    color: var(--naranja); /*Aplicamos el color el cursor*/
-    animation: parpadeo 1s steps(1) infinite; /*nombre duracion tipo repeticiones cada ciclo de 1 segundo*/
-}
-
-@keyframes parpadeo { /*se define la animacion*/
-    50% { opacity: 0;}  /*a mitad del ciclo elemento se vuelve invisible*/
-}
-
-
-.enlaces-sociales {
-    display: flex;
-    gap: 1.5rem; /*espaciado*/
-    margin-top: 1.5rem;
-    font-size: o.85rem;
-}
-
-.enlaces-sociales a:nth-child(1) { color: var(--azul); } /*elegimos el hijo 1 y cabiamos el color a azul*/
-.enlaces-sociales a:nth-child(2) { color: var(--verde); } /*elegimos el hijo 2 y cambiamos el color a verde*/
-.enlaces-sociales a:nth-child(3) { color: var(--ocre); } /*elegimos el hijo 2 y cambiamos el color a ocre*/
-
-.enlaces-sociales a:hover {
-    opacity: 0.7;  
+    /*espaciado entre parrafos*/
+    font-family: var(--fuente-titulos);
+    text-align: justify;
 }
 
 .grid-tarjetas {
-    display: grid; /*creamos cuadricula*/
-    grid-template-columns: repeat(3, 1fr); /*tres columnas iguales*/
-    gap: 1.5rem; 
+    display: grid;
+    /*creamos cuadricula*/
+    grid-template-columns: repeat(3, 1fr);
+    /*tres columnas iguales*/
+    gap: 1.5rem;
 }
 
 .tarjeta {
@@ -283,7 +352,8 @@ h1 {
 
 .tarjeta:hover {
     border-color: var(--naranja);
-    transform: translateX(-4px); /*mueve la tarjeta hacia arriba cuando pasa el mouse*/
+    transform: translateX(-4px);
+    /*mueve la tarjeta 4px hacia la izquierda cuando pasa el mouse*/
 }
 
 .tarjeta p {
@@ -301,12 +371,30 @@ h1 {
 
 .etiquetas li {
     font-family: var(--fuente-monospace);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     padding: 0.2rem 0.7rem;
     border: 1px solid var(--lineas-bordes);
     border-radius: 99px;
     color: var(--texto-suave);
+    cursor: pointer;
+
 }
+
+.grid-tarjetas .tarjeta:nth-child(1) {
+    --color-etiqueta: var(--azul);
+}
+
+
+.grid-tarjetas .tarjeta:nth-child(2) {
+    --color-etiqueta: var(--verde);
+}
+
+
+.grid-tarjetas .tarjeta:nth-child(3) {
+    --color-etiqueta: var(--ocre);
+}
+
+/*comportamientos*/
 
 #habilidades h3 {
     font-family: var(--fuente-monospace);
@@ -315,7 +403,16 @@ h1 {
     letter-spacing: 0.1em;
     color: var(--naranja);
     margin-bottom: 1rem;
+    cursor: pointer;
 }
+
+.grid-tarjetas .etiquetas li:hover {
+    border-color: var(--color-etiqueta);
+    /*el borde toma el color de su tarjeta*/
+    transform: translateY(-4px);
+}
+
+
 
 .tarjeta-proyecto img {
     display: block;
@@ -324,6 +421,15 @@ h1 {
     object-fit: cover;
     border-radius: 6px;
     margin-bottom: 1rem;
+}
+.tarjeta-proyecto {
+    display: flex;
+    flex-direction: column; /*los hijos (imagen, titulo, texto, etiquetas, enlaces) se apilan en vertical*/
+}
+
+
+.tarjeta-proyecto .etiquetas {
+    margin-top: auto; /*se come todo el espacio libre de arriba y baja las etiquetas al fondo*/
 }
 
 .tarjeta-enlaces {
@@ -343,7 +449,14 @@ h1 {
     padding-left: 1.5rem;
 }
 
-.linea-tiempo li{
+.linea-tiempo h3 {
+font-weight: 700;
+font-size: 20px;
+margin: 0.2rem 0 0.6rem; /*un poco de aire arriba y abajo del titulo*/
+
+}
+
+.linea-tiempo li {
     position: relative;
     margin-bottom: 1.5rem;
 }
@@ -353,21 +466,24 @@ h1 {
     position: absolute;
     left: -1.9rem;
     top: 0.5rem;
-    width: 10px;
-    height: 10px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
     background-color: var(--naranja);
 }
 
 .anio {
     font-family: var(--fuente-monospace);
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     color: var(--azul);
 }
 
 .linea-tiempo p {
     color: var(--texto-suave);
+    max-width: 65ch; /*lineas de 75 letras*/
+
 }
+
 
 .contacto-contenido {
     display: flex;
@@ -387,7 +503,8 @@ h1 {
     margin-bottom: 0.3rem;
 }
 
-.formulario input, .formulario textarea {
+.formulario input,
+.formulario textarea {
     width: 100%;
     background-color: var(--superficie);
     border: 1px solid var(--lineas-bordes);
@@ -402,21 +519,8 @@ h1 {
     resize: vertical;
 }
 
-.formulario input:focus, .formulario textarea:focus {
+.formulario input:focus,
+.formulario textarea:focus {
     outline: none;
     border-color: var(--naranja);
-}
-
-.boton {
-    font-family: var(--fuente-monospace);
-    cursor: pointer;
-}
-
-
-
-body {
-    background-image:
-        linear-gradient(var(--lineas-bordes) 1px, transparent 1px),
-        linear-gradient(90deg, var(--lineas-bordes) 1px, transparent 1px);
-    background-size: 56px 56px;
 }

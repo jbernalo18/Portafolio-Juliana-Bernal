@@ -13,7 +13,7 @@
 <body>
      <!----menú de navegacion---->
     <header class="navbar">
-        <div class="logo">JB.dev</div>
+        <div class="logo">JB<span>.dev</span></div>
         <nav>
             <ul class="navLinks">
                 <li><a href="#inicio">//INICIO</a></li>
@@ -33,7 +33,7 @@
     <div class="inicio-informacion"> 
       <p class="rol">[Programadora Full Stack Java]</p>
       <h1>JULIANA BERNAL<span class="cursor">_</span></h1>
-      <p class="frase">[frase que me hace empleable]</p>
+      <p class="frase">[De los planos industriales a las APIs REST: ingeniería con lógica de principio a fin]</p>
      
      <div class="botones">  
      <a class="boton boton-principal" href="#proyectos">ver_proyectos()</a>
@@ -142,8 +142,7 @@
             <article class="tarjeta tarjeta-proyecto">
                 <img src="./Files/Images/image_temporal.jpeg" alt="Descripcioin imagen">
                 <h3>Planificador de Tareas</h3>
-                <p>E-commerce web que permite descubrir y adquirir kits diseñados según diferentes necesidades del usuario. La aplicación integra catálogo de productos, detalle de kits, registro e inicio de sesión, carrito de compras y funcionalidades de administración.
-                   El proyecto combina frontend y backend para gestionar productos, usuarios y operaciones del sistema, utilizando una API REST y persistencia de datos con Java, Spring Boot y MySQL.</p>
+                <p>Planificador de tareas individual, con tablero de tarjetas al estilo Trello. Cada tarjeta guarda nombre, descripción, responsable, fecha de entrega y estado, y se crea desde un formulario con validaciones. Lo diseñé en Figma, lo programé en módulos de JavaScript (validaciones, gestión de tareas y pintado en pantalla) y organicé el trabajo por sprints en GitHub Projects.</p>
                 <ul class="etiquetas">
                     <li>[HTML]</li>
                     <li>[CSS]</li>
@@ -152,29 +151,28 @@
                     <li>[MySQL]</li>
                 </ul>
                 <div class="tarjeta-enlaces">
-                    <a href="#">Ver más</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">Código</a>
+                    <a href="https://github.com/jbernalo18/Proyecto-Planificador-Tareas.git" target="_blank" rel="noopener noreferrer">Código</a>
                 </div>
             </article>
 
             <article class="tarjeta tarjeta-proyecto">
                 <img src="./Files/Images/image_temporal.jpeg" alt="Descripcioin imagen">
-                <h3>Sistema de Solicitud de Préstamos (Loan Application)</h3>
-                <p>Proyecto de modelado y automatización de procesos (end-to-end) para la gestión de solicitudes de crédito, desarrollado en Bizagi Studio y respaldado sobre SQL Server Express. Incluye el diseño del flujo BPMN 2.0, reglas de negocio y empaquetado del proyecto</p>
+                <h3>LoanRequest y bot RPA</h3>
+                <p>Proceso de solicitud de créditos modelado y automatizado de punta a punta. En Bizagi Studio diseñé el flujo BPMN 2.0 con sus reglas de negocio y validaciones automáticas, respaldado en SQL Server Express. Un bot de UiPath usa ICR para extraer del PDF solo los campos necesarios, los llena en un Excel y los envía a la base de datos. Frente al proceso manual, la eficiencia aumentó un 65 %.</p>
                 <ul class="etiquetas">
                     <li>[Bizagi Studio]</li>
                     <li>[SQL Server Express]</li>
+                     <li>[UiPath]</li>
                 </ul>
                 <div class="tarjeta-enlaces">
-                    <a href="#">Ver más</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">Código</a>
+                    <a href="https://github.com/jbernalo18/LoanRequest-y-RPA.git" target="_blank" rel="noopener noreferrer">Código</a>
                 </div>
             </article>
 
                 <article class="tarjeta tarjeta-proyecto">
                 <img src="./Files/Images/image_temporal.jpeg" alt="Descripcioin imagen">
                 <h3>Kit-Box</h3>
-                <p>E-commerce web para descubrir y adquirir kits según las necesidades del usuario: catálogo de productos, detalle de kits, registro e inicio de sesión, carrito de compras y administración. Proyecto en equipo de 5 personas bajo SCRUM, con 11 pantallas diseñadas en Figma y front end en HTML, CSS, JavaScript modular y Bootstrap; el backend con Java, Spring Boot y MySQL está planificado. Mi parte: lideré las ceremonias del Sprint 2 como Scrum Master; diseñé en Figma la vista de contáctenos, el banner y la vista de administrador, con los principios de Donald Norman; y desarrollé la página de administrador, que agrega y elimina productos y los guarda en localStorage, además del banner responsivo del catálogo para celular, tablet y escritorio.</p>
+                <p>E-commerce de kits según las necesidades de cada persona, con catálogo, carrito, registro y administración. Lo hicimos en equipo de 5 bajo SCRUM: 11 pantallas en Figma y un front end en HTML, CSS, JavaScript modular y Bootstrap; el backend en Java, Spring Boot y MySQL está planificado. Fui Scrum Master del Sprint 2, diseñé la vista de administrador y desarrollé esa página, que agrega y elimina productos en localStorage, además del banner responsivo del catálogo.</p>
                 <ul class="etiquetas">
                     <li>[HTML]</li>
                     <li>[CSS]</li>
@@ -183,8 +181,7 @@
                     <li>[MySQL]</li>
                 </ul>
                 <div class="tarjeta-enlaces">
-                    <a href="#">Ver más</a>
-                    <a href="#" target="_blank" rel="noopener noreferrer">Código</a>
+                    <a href="https://github.com/KristianKnt/kit-box.git" target="_blank" rel="noopener noreferrer">Código</a>
                 </div>
             </article>
         </div>
@@ -196,38 +193,38 @@
         <ol class="linea-tiempo">
            <li>
                 <span class="anio">2016 – 2020</span>
-                <h3>Tecnología en Mantenimiento Electromecánico Industrial (SENA), con especialización tecnológica en automatización</h3>
-                <p>En mi práctica como auxiliar de ingeniería en Griffith Foods actualicé los planos de funcionamiento, eléctricos y de plantas de tratamiento. Recorrí la planta para comparar lo construido con los planos madre, levanté en AutoCAD el sistema de agua caliente desde las calderas hasta el retorno y modelé en 3D el área de sellado y los mezcladores. Trabajé en paralelo con el arquitecto, cada uno a cargo de una parte, y aprendí a verificar requerimientos, a seguir un flujo de punta a punta y a identificar cada válvula y equipo. Hoy aplico lo mismo al programar: reviso requerimientos, divido el trabajo por funcionalidades en ramas de Git y sigo el flujo de los datos de principio a fin.</p>
+                <h3>Tecnología en Mantenimiento Electromecánico Industrial (SENA)</h3>
+                <p>En mi práctica como auxiliar de ingeniería en Griffith Foods actualicé planos de funcionamiento, eléctricos y de plantas de tratamiento: recorrí la planta para compararla con los planos madre, levanté en AutoCAD el sistema de agua caliente y modelé en 3D el área de sellado y los mezcladores. Aprendí a verificar requerimientos y a seguir un flujo de punta a punta; hoy lo aplico al programar, dividiendo el trabajo por funcionalidades en ramas de Git.</p>
             </li>
                        <li>
                 <span class="anio">2022</span>
                 <h3>Diplomado en Programación en Java (Politécnico de Colombia, 120 h)</h3>
-                <p>Estudié programación orientada a objetos y sus pilares, y practiqué con ejercicios hasta llegar a interfaces. Lo que más me costó fue el polimorfismo y la clase abstracta, y los entendí practicando mucho, investigando y viendo videos. Hoy, en Generation, esa base me permitió entender rápido el concepto de interfaces en la práctica y retomar la sintaxis de Java.</p>
+                <p>Estudié programación orientada a objetos y practiqué con ejercicios hasta llegar a interfaces. Lo más difícil fue el polimorfismo y la clase abstracta, que entendí practicando e investigando. Hoy, en Generation, esa base me permitió retomar la sintaxis de Java y entender rápido las interfaces.</p>
             </li>
                        <li>
                 <span class="anio">2022</span>
                 <h3>Scrum Fundamentals Certified (SCRUMstudy)</h3>
-                <p>Aprendí los roles, las ceremonias, la filosofía agile, a dividir el trabajo en sprints y a llevarlo en un tablero. Hoy lo aplico en mis dos proyectos. En Kit-Box fui Scrum Master del Sprint 2: organicé el planning y las dailies, mantuve el tablero al día, revisé con el PO los requerimientos y la rúbrica, y propuse la estructura de trabajo del sprint; se cumplieron todas las entregas. En el Planificador de Tareas, que es individual, asumo todos los roles: con los sprints que define el profe armo mi tablero en GitHub Projects y trabajo cada entregable.</p>
+                <p>Aprendí los roles, las ceremonias y a dividir el trabajo en sprints con un tablero. En Kit-Box fui Scrum Master del Sprint 2: organicé el planning y las dailies, mantuve el tablero al día y se cumplieron todas las entregas. En el Planificador de Tareas, que es individual, asumo todos los roles y armo mi tablero en GitHub Projects.</p>
             </li>
                        <li>
                 <span class="anio">2022 – 2023</span>
                 <h3>Bootcamp Bizagi/RPA (Sophos Solutions, Ruta N y Alcaldía de Medellín)</h3>
-                <p>Aprendí modelamiento de procesos con notación BPMN y flujos de trabajo en Bizagi, donde implementé un sistema de préstamos de banco con validaciones, envío de solicitud, manejo de identidades y base de datos en SQL Server Express. En RPA trabajé con Automation Anywhere y UiPath, y como proyecto de entrega automaticé con bots la extracción de datos de un PDF, su llenado en un Excel y el envío a la base de datos. Al comparar con las métricas de lo que tardaba una persona haciéndolo a mano, la automatización aumentó la eficiencia en un 65 %.</p>
+                <p>Aprendí modelamiento de procesos con BPMN en Bizagi, donde implementé un sistema de préstamos con validaciones y base de datos en SQL Server Express. En RPA, con UiPath y Automation Anywhere, automaticé con bots la extracción de datos de un PDF hacia un Excel y la base de datos, y la eficiencia aumentó un 65 % frente al proceso manual</p>
             </li>
                        <li>
                 <span class="anio">2023 – 2024</span>
-                <h3>Analista de soporte técnico y servidores (Staffing, en VE Productions para Vivo Gaming)</h3>
-                <p>Entré al equipo en pleno montaje de los estudios: cableé video y audio desde el estudio hasta el servidor, instalé equipos y configuré encoders con RTMP y la segmentación de redes con VLANs. Después pasé a ser líder de la tarde, a cargo de 4 estudios de juegos de casino, donde identificaba fallas, conectaba backups y cambiaba la IP cuando la red fallaba. También mapeé los escáneres de cartas en el archivo JSON, instalé los juegos y configuré sus entornos.Hoy aplico lo mismo al programar: conozco el flujo completo de los datos para ubicar dónde se rompe algo y por qué. Descarto causas según el error, como cuando revisaba en el encoder si llegaba imagen para saber si el problema estaba en la cámara, en el cableado o en el envío por RTMP.</p>
+                <h3>Analista de soporte técnico y servidores (Staffing para Vivo Gaming)</h3>
+                <p>Entré al equipo durante el montaje de los estudios: cableé video y audio hasta el servidor, instalé equipos y configuré encoders con RTMP y segmentación de redes con VLANs. Luego fui líder de la tarde de 4 estudios de juegos de casino, donde identificaba fallas, conectaba backups y mapeaba los escáneres de cartas en JSON. Hoy aplico lo mismo al programar: conozco el flujo de los datos para ubicar dónde se rompe algo y descartar causas según el error</p>
             </li>
                        <li>
                 <span class="anio">2024 – hoy</span>
                 <h3>Consultora e integradora de proyectos técnicos (freelance)</h3>
-                <p>Trabajo con un compañero del SENA, también electromecánico, en proyectos para fincas y veredas cercanas: estructuras metálicas, conexiones eléctricas de casas, porterías e instalación y configuración de cámaras de seguridad. Visitamos el sitio, tomamos medidas, hacemos el plano, calculamos el material y ambos hacemos el montaje. Primero hacemos un cálculo aproximado y luego lo revisamos con detalle, y así reduje costos en un 10 %. He levantado los requerimientos de más de 15 proyectos e instalado más de 6 sistemas de cámaras con el 100 % de cobertura.</p>
+                <p>Trabajo con un compañero del SENA en proyectos para fincas y veredas: estructuras metálicas, conexiones eléctricas, porterías y cámaras de seguridad. Visitamos el sitio, tomamos medidas, hacemos el plano y calculamos el material; primero un cálculo aproximado y luego una revisión detallada, con la que reduje costos en un 10 %. He levantado los requerimientos de más de 15 proyectos e instalado más de 6 sistemas de cámaras con el 100 % de cobertura.</p>
             </li>
                        <li>
                 <span class="anio">2026</span>
                 <h3>Generation Colombia, Desarrolladora Full Stack Java (en curso)</h3>
-                <p>Estoy aprendiendo a programar en Java: clases, herencia, interfaces y colecciones. El programa sigue con Spring Boot y bases de datos, que es hacia donde voy como desarrolladora backend. En paralelo trabajo el front end con HTML, CSS, JavaScript, Bootstrap, localStorage y Git en Kit-Box, un proyecto en equipo de 5. También aprendí Figma y buenas prácticas de UX con los principios de Donald Norman, que apliqué en el diseño de las pantallas del proyecto.</p>
+                <p>Llegué a Generation con una base de electromecánica y salí programando en Java. Aprendí haciendo: me tomé el tiempo de entender las clases abstractas, las interfaces y las colecciones, y trabajé en equipo con ramas de Git. En JavaScript conecté mis páginas con APIs, como la de Pokémon, guardé datos en localStorage y practiqué CRUD con json-server. Con Spring Boot y MySQL aprendí cómo se construye el backend de una aplicación, con su API REST y sus datos guardados. Todo eso lo puse a prueba en Kit-Box, un e-commerce de kits que hicimos en equipo de 5. Fui Scrum Master del Sprint 2, desarrollé la página de administrador y dejé el banner del catálogo listo para celular, tablet y escritorio. También armé una tienda en línea con carrito para un hackathon.</p>
             </li>
         </ol>
 
@@ -242,7 +239,7 @@
      
      <div class="contacto-contenido">
     <div class="contacto-info">
-        <p>[Frase invitando a escribirte]</p>
+        <p>¿Tienes un proyecto o una vacante? Escríbeme y lo conversamos.</p>
          <div class="enlaces-sociales">
         <a href="https://github.com/jbernalo18" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="https://www.linkedin.com/in/juliana-bernal-ortiz-backend/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
