@@ -287,6 +287,7 @@ section:not(#inicio)>* {
 
 .sobremi-frase {
     padding-top: 20px;
+    margin-bottom: 1.5rem;
 }
 
 .sobremi-contenido {
@@ -357,7 +358,7 @@ section:not(#inicio)>* {
 }
 
 .tarjeta p {
-    color: var(--texto-suave);
+    color:color-mix(in srgb, var(--texto-suave) 85%, #fff 15%)  ;
     font-size: 0.9rem;
     margin: 0.5rem 0 1rem;
 }
@@ -376,7 +377,6 @@ section:not(#inicio)>* {
     border: 1px solid var(--lineas-bordes);
     border-radius: 99px;
     color: var(--texto-suave);
-    cursor: pointer;
 
 }
 
@@ -403,7 +403,6 @@ section:not(#inicio)>* {
     letter-spacing: 0.1em;
     color: var(--naranja);
     margin-bottom: 1rem;
-    cursor: pointer;
 }
 
 .grid-tarjetas .etiquetas li:hover {
@@ -417,8 +416,12 @@ section:not(#inicio)>* {
 .tarjeta-proyecto img {
     display: block;
     width: 100%;
-    height: 120px;
+    aspect-ratio: 16 / 9;
+    height: auto;
     object-fit: cover;
+    object-position: top;
+    background-color: var(--fondo);
+    border: 1px solid var(--lineas-bordes);
     border-radius: 6px;
     margin-bottom: 1rem;
 }
@@ -480,7 +483,7 @@ margin: 0.2rem 0 0.6rem; /*un poco de aire arriba y abajo del titulo*/
 
 .linea-tiempo p {
     color: var(--texto-suave);
-    max-width: 65ch; /*lineas de 75 letras*/
+    max-width: 75ch; /*lineas de 75 letras*/
 
 }
 
@@ -523,4 +526,159 @@ margin: 0.2rem 0 0.6rem; /*un poco de aire arriba y abajo del titulo*/
 .formulario textarea:focus {
     outline: none;
     border-color: var(--naranja);
+}
+
+
+@media (max-width: 960px) {
+    section {
+        padding: 4.5rem 2rem;
+    }
+
+
+    #inicio {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 2.5rem;
+        padding-top: 3rem;
+    }
+
+    .inicio-informacion {
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inicio-imagen img {
+        padding-right: 0;
+        width: min(22rem, 80%);
+    }
+
+ 
+    .sobremi-contenido {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        margin-top: 0;
+    }
+
+    .sobre-mi-img {
+        flex: none;
+        width: 100%;
+        max-width: 16rem;
+    }
+
+    .sobre-mi-img img {
+        width: 100%;
+    }
+
+   
+    .grid-tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    
+    .contacto-contenido {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+   
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.85rem 1.25rem;
+    }
+
+    .navLinks {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 0.6rem 0.9rem;
+        font-size: 0.75rem;
+    }
+
+    
+    section {
+        padding: 3.5rem 1.25rem;
+        min-height: auto;
+        scroll-margin-top: 95px; 
+    
+    }
+
+    h2 {
+        font-size: 1.45rem;
+        margin-bottom: 1.5rem;
+
+    }
+
+    .botones{
+        width: 100%;
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .enlaces-sociales{
+        justify-content: center;
+    }
+
+    .sobre-mi-informacion p{
+        text-align: left;
+    }
+
+    .grid-tarjetas {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .tarjeta:hover {
+        transform: none;
+
+
+    }
+    #sobremi {
+        padding-inline: 1.25rem;
+    }
+
+    .sobremi-contenido {
+        gap: 1.5rem;
+    }
+
+    .sobre-mi-informacion ul {
+        padding-left: 1.25rem;
+    }
+
+    .sobre-mi-informacion li {
+        margin-bottom: 0.5rem;
+    }
+
+
+    .linea-tiempo {
+        padding-left: 1.15rem;
+
+
+    }
+
+    .linea-tiempo li::before {
+        left: -1.55rem;
+        width: 14px;
+        height: 14px;
+    }
+
+    .linea-tiempo h3 {
+        font-size: 1.1rem;
+
+
+    }
+
+    .formulario .boton {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem 1.3rem;
+    }
 }
