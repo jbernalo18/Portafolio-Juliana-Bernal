@@ -225,7 +225,8 @@ section:not(#inicio)>* {
 
 .frase {
     color: var(--texto-suave);
-    max-width: 45ch;
+    max-width: 67ch;
+    text-wrap: balance;
     /*ancho de caracteres para limitar el numero de letras por linea*/
     font-family: var(--fuente-monospace);
     margin-top: 1rem;
