@@ -3,7 +3,7 @@
 > Apasionada por la tecnología y por entender cómo funcionan las cosas.
 
 **Portafolio:** [jbernalo18.github.io/Portafolio-Juliana-Bernal](https://jbernalo18.github.io/Portafolio-Juliana-Bernal/)
-· [GitHubPages]([https://github.com/jbernalo18](https://jbernalo18.github.io/Portafolio-Juliana-Bernal/#inicio))
+· [GitHubPages](https://jbernalo18.github.io/Portafolio-Juliana-Bernal/#inicio/)).
 · [GitHub](https://github.com/jbernalo18)
 · [LinkedIn](https://www.linkedin.com/in/juliana-bernal-ortiz-backend/)
 · [Correo](mailto:julianabernal.7@gmail.com)
